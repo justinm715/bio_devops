@@ -1,0 +1,10 @@
+---
+- hosts: app
+  user: root
+  roles:
+    # - epel
+    # - python
+    # - nginx
+    # - git
+    # - docker
+    - bio_site

@@ -1,0 +1,8 @@
+- name: Install pip
+  yum: name=python-pip state=present
+
+- name: Install virtualenv
+  pip: name=virtualenv
+
+- name: Upgrade six package # fixes docker-pry
+  pip: name=six version=1.8.0

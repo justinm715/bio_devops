@@ -1,0 +1,16 @@
+- name: Fetch the latest bio repo
+  git: repo=https://github.com/justinm715/bio.git
+    dest=/srv/bio
+    version=master
+
+- name: Fetch docker container definition
+  git: repo=https://github.com/justinm715/bio_container.git
+    dest=/srv/bio_container
+    version=master
+
+- name: Build docker container
+  docker: image=justinm715/bio-container
+    name=bio_site
+    state=running
+    tty=True
+    command="/bin/bash -l"
